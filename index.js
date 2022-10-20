@@ -23,3 +23,21 @@ let test = thing;
 let age1;
 // age1 + 1; 문자로도, 숫자로도 다른 결과값으로서 계산이 되기 때문에 에러가 발생(둘 중 하나 결정을 해줘야한다.)
 // 타입스크립트는 언제나 엄격하다는 것을 늘 기억하자(깐깐한 녀석임)
+// 함수의 변수에 타입 지정을 안하면 자동으로 any 타입이 지정된다.
+function addTwo(x) {
+    return x + 2;
+}
+// 함수에서 어떤 값을 반환하지 않을 때 사용하는 타입 -> void
+function noReturn(x) {
+    console.log(11);
+    // return 11; 리턴을 하지 않는 함수에 대해서는 void 즉, 리턴하게 되면 에러를 내준다.
+}
+// addTwo(); 타입 지정한 매개 변수를 안넣으면 에러가 난다.
+// 이럴 때, ?를 사용하면 된다.
+function addThree(x) {
+    return x + 3;
+}
+function addFour(x) {
+    return x + 4;
+}
+// x?와 x에 | undefined를 유니온으로 하는 거랑 같은 효과
