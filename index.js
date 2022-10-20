@@ -34,12 +34,12 @@ function noReturn(x) {
 }
 // addTwo(); 타입 지정한 매개 변수를 안넣으면 에러가 난다.
 // 이럴 때, ?를 사용하면 된다.
-function addThree(x) {
-    return x + 3;
-}
-function addFour(x) {
-    return x + 4;
-}
+// function addThree(x?: number): number {
+//   return x + 3;
+// }
+// function addFour(x: number | undefined): number {
+//   return x + 4;
+// }
 // x?와 x에 | undefined를 유니온으로 하는 거랑 같은 효과
 // type이 하나로 확정되지 않았을 경우, type narrowing을 사용
 // typeof가 아니라도, 타입을 하나로 확정 지어줄 수 있으면 전부 사용 가능
@@ -113,3 +113,4 @@ const final = (x, y, z) => {
     return z(y(x));
 };
 console.log(final('010-1111-2222', cutZero, removeDash));
+// TS로 돔 조작하는 방법

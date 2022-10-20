@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESnext",
     "module": "commonjs",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "strictNullChecks": true
   }
 }
