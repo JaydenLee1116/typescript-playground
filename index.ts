@@ -71,3 +71,39 @@ function test32(x: number | string) {
   let arr: number[] = [];
   arr[0] = x as number; // x 타입을 number로 인식해줘라 -> 유니온 타입을 하나로 확정해줄 때 사용하는 것(실제 타입을 바꾸는 효과는 없다)
 }
+
+// 변수에 타입 할당(type alias)
+
+type AnimalType = string | number | undefined;
+let animal: AnimalType = 123;
+
+type OtherType = { name: string; age: number };
+let other: OtherType = { name: 'jay', age: 31 };
+
+// object 내의 값을 바꿀 수 없도록 할 수 있다.
+const region = { region: 'seoul' };
+
+type Dog = { readonly name: string };
+const dog: Dog = {
+  name: 'hodu',
+};
+// readonly를 사용하면 객체 내의 값이 수정 불가
+// hodu.name = 'hodumon'
+// 실제로 js로 안바뀌는 건 아니고 실행은 되는데, ts 자체로 에러를 보여주는 것이다.(주의)
+
+type Name = string;
+type Age = number;
+// 타입 변수를 아래와 같이 union 타입으로 합치는 것도 가능하다.
+type Person = Name | Age;
+
+// &로 object 타입 합치기
+type PositionX = { x: number };
+type PositionY = { y: number };
+
+// { x: number, y: number }을 만들기 위해서 아래와 같이 &를 사용한다. (각 object 내의 속성을 합쳐줄 때)
+type Position = PositionX & PositionY;
+let position: Position = { x: 10, y: 10 };
+
+// 같은 이름의 type 변수는 재정의가 불가능하다!(기억)
+
+export {};

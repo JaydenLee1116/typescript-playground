@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let engName = 'jayden';
 let age = 31;
 let isColored = true;
@@ -56,3 +58,11 @@ function test32(x) {
     let arr = [];
     arr[0] = x; // x 타입을 number로 인식해줘라 -> 유니온 타입을 하나로 확정해줄 때 사용하는 것(실제 타입을 바꾸는 효과는 없다)
 }
+let animal = 123;
+let other = { name: 'jay', age: 31 };
+// object 내의 값을 바꿀 수 없도록 할 수 있다.
+const region = { region: 'seoul' };
+const dog = {
+    name: 'hodu',
+};
+let position = { x: 10, y: 10 };
