@@ -54,5 +54,20 @@ function addThree(x?: number): number {
 function addFour(x: number | undefined): number {
   return x + 4;
 }
-
 // x?와 x에 | undefined를 유니온으로 하는 거랑 같은 효과
+
+// type이 하나로 확정되지 않았을 경우, type narrowing을 사용
+// typeof가 아니라도, 타입을 하나로 확정 지어줄 수 있으면 전부 사용 가능
+function test2(x: number | string) {
+  if (typeof x === 'string') {
+    return x + '1';
+  } else {
+    return x + 1;
+  }
+}
+
+// assertion 문법(타입을 변경해주는 게 아님을 기억하자) -> 평상시에는 자주 사용할 일이 없다.
+function test32(x: number | string) {
+  let arr: number[] = [];
+  arr[0] = x as number; // x 타입을 number로 인식해줘라 -> 유니온 타입을 하나로 확정해줄 때 사용하는 것(실제 타입을 바꾸는 효과는 없다)
+}
