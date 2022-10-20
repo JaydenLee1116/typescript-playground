@@ -202,3 +202,52 @@ class Person1 {
 
 let man1 = new Person1('jay');
 let man2 = new Person1('hodu');
+
+// interface => object는 type이 아니라 interface로 타입 지정해도 된다
+
+// 1. type alias 를 이용한 방법
+type Square = { color: string; width: number };
+let square: Square = { color: 'tomato', width: 100 };
+
+// 2. interface 사용 (약간 class 문법과 닮았음)
+interface Square1 {
+  color: string;
+  width: number;
+}
+let square1: Square1 = { color: 'tomato', width: 100 };
+
+// 중간 테스트 - interface로 타입 지정해보기
+// type 키워드를 안쓰고 interface를 사용하는 이유!!!
+interface Student {
+  name: string;
+}
+
+// 이런 식으로 class 상속처럼 extends 사용 가능
+interface Teacher extends Student {
+  age: number;
+}
+
+let student: Student = { name: 'hodu' };
+let teacher: Teacher = { name: 'jay', age: 31 };
+
+// 사실 type alias도 비슷하게 가능
+// &(intersection)을 사용 가능
+// A & B -> A와 B를 둘 다 만족하는 타입을 만들어달라 -> 즉, extends와는 쪼금 다른 느낌임
+type Animal = { name: string };
+type Cat = { age: number } & Animal;
+
+// type vs interface (중요한 차이점)
+// interface는 중복선언 가능, type은 중복선언 불가능
+
+interface Student1 {
+  name: string;
+}
+
+interface Student1 {
+  score: number;
+}
+
+// 중복선언하면 자동으로 extends가 되어 합쳐지는 느낌
+
+// interface가 좀더 유연한 느낌
+// 외부 라이브러리 같은 경우, interface를 많이 사용한다. 추후에 사용자가 알아서 타입을 수정해서 사용 가능하다.
