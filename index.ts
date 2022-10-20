@@ -1,11 +1,12 @@
-let num: number = 5;
+let engName: string = 'jayden';
+let age: number = 31;
+let isColored: boolean = true;
+let nothing: undefined = undefined;
 
-function test(x: number): number {
-  return x * 2;
-}
+let names: string[] = ['lee', 'kim'];
+let members: { member1: string; member2: string } = {
+  member1: 'kim',
+  member2: 'lee',
+};
 
-let obj: { name: string; age: number } = { name: 'jay', age: 31 };
-
-type Jayden = string | number;
-
-let temp: Jayden = 1;
+let str = 'str';

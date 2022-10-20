@@ -1,6 +1,10 @@
-let num = 5;
-function test(x) {
-    return x * 2;
-}
-let obj = { name: 'jay', age: 31 };
-let temp = 1;
+let engName = 'jayden';
+let age = 31;
+let isColored = true;
+let nothing = undefined;
+let names = ['lee', 'kim'];
+let members = {
+    member1: 'kim',
+    member2: 'lee',
+};
+let str = 'str';
