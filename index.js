@@ -114,3 +114,15 @@ const final = (x, y, z) => {
 };
 console.log(final('010-1111-2222', cutZero, removeDash));
 // TS로 돔 조작하는 방법
+class Person1 {
+    // 아래처럼 타입 지정해주는 게 포인트
+    name;
+    constructor(name) {
+        this.name = name;
+    }
+    func(a) {
+        return a + 1;
+    }
+}
+let man1 = new Person1('jay');
+let man2 = new Person1('hodu');

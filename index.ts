@@ -188,3 +188,17 @@ const final = (x: string, y: CutZero, z: RemoveDash): number => {
 console.log(final('010-1111-2222', cutZero, removeDash));
 
 // TS로 돔 조작하는 방법
+
+class Person1 {
+  // 아래처럼 타입 지정해주는 게 포인트
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  func(a: number): number {
+    return a + 1;
+  }
+}
+
+let man1 = new Person1('jay');
+let man2 = new Person1('hodu');
