@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let engName = 'jayden';
 let age = 31;
 let isColored = true;
@@ -66,3 +64,52 @@ const dog = {
     name: 'hodu',
 };
 let position = { x: 10, y: 10 };
+// 같은 이름의 type 변수는 재정의가 불가능하다!(기억)
+// 더 엄격한 타입 지정 ex) 'jay'만 들어올 수 있는 타입
+// 특정 글자나 숫자만 가질 수 있게 제한을 두는 것
+// 이걸 literal types 라고 한다.
+// 변수에 뭐가 들어올지 더 엄격하게 가능, 자동완성되는 점
+let more;
+more = 'hodu';
+function func(a) {
+    return 1;
+}
+func('hello');
+function rsp(x) {
+    return ['가위', '바위'];
+}
+rsp('가위');
+// const 변수의 한계
+var data = {
+    name: 'kim',
+    age: 31,
+};
+// as const를 사용하면 객체 내의 모든 키가 readonly가 되면서 자료 형태가 값이 된다.
+// 위의 경우 data.name의 자료 타입이 'kim'이 되면서 readonly가 된다.
+function my(a) { }
+my(data.name); // data.name의 자료 형태가 'kim'이 되어서 에러가 안나는 모습
+let func3 = function () {
+    return 1;
+};
+// object 내부의 함수(메서드) 타입 지정하기
+let members1 = {
+    name: 'kim',
+    plusOne(a) {
+        return a + 1;
+    },
+    changeName: () => { },
+};
+const rand = () => { };
+const cutZero = (x) => {
+    if (x[0] === '0') {
+        return x.slice(1, x.length);
+    }
+    return x;
+};
+const removeDash = (x) => {
+    return Number(x.replaceAll('-', ''));
+};
+const final = (x, y, z) => {
+    return z(y(x));
+};
+console.log(final('010-1111-2222', cutZero, removeDash));
